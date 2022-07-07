@@ -11,6 +11,20 @@ export default {
 
         }
     },
+    mounted() {
+        this.getPatient();
+    },
+    methods: {
+        async getPatient() {
+            try {
+                const {data} = await axios.get('http://hilifeapi4-env.eba-9z5dxudh.us-east-1.elasticbeanstalk.com/api/v1/Patient/' + localStorage.getItem('id'));
+                this.patient = data;
+            } catch (error) {
+                console.log(error);
+            }
+        },
+        }
+    }
     components:{
         Update,
         ChangePassword,
