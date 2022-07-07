@@ -1,6 +1,12 @@
 <script>
 export default {
     name: "LoginForm",
+    methods: {
+        disabledBtun: function() {
+            const btn = document.getElementById("btn-signup");
+            btn.disabled = false;
+        },
+    },
 }
 </script>
 

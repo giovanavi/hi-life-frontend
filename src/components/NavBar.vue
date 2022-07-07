@@ -15,19 +15,30 @@ export default{
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
+                    <router-link to="/">
                         <a href="#" class="nav-link" aria-current="page">Home</a>
+                    </router-link>
                 </li>
                 <li class="nav-item">
-                        <a href="#" class="nav-link">Médicos</a>
+                    <router-link to="/doctor">
+                        <a href="#" class="nav-link" >Médicos</a>
+                    </router-link>
                 </li>
                 <li class="nav-item">
+                    <router-link to="/patient">
                         <a href="#" class="nav-link">Pacientes</a>
+                    </router-link>
+                        
                 </li>
                 <li class="nav-item">
+                    <router-link to="/login">
                         <a href="#" class="nav-link">Login</a>
+                    </router-link>
                 </li>
                 <li class="nav-item">
+                    <router-link to="/signup">
                         <a href="#" class="nav-link">Cadastre-se</a>
+                    </router-link>
                 </li>
             </ul>
         </div>
@@ -42,7 +53,8 @@ export default{
 .nav-item{
     font-size: large;
 }
-.nav-link{
+a {
     color: aliceblue;
+    text-decoration: none;
 }
 </style>

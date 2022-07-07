@@ -9,11 +9,12 @@ export default {
         <div class="footer-copyright text-center py-3">© 2022 Copyright:
             <a href="/"> MDBootstrap.com</a>
         </div>
-    </footer>   
+    </footer>
 </template>
 
 <style scoped>
-div{
-    color: aliceblue;
+.footer {
+    background-color: #343a40;
+    color: #fff;
 }
 </style>
