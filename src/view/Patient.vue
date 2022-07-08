@@ -3,6 +3,7 @@ import Update from '../components/Update.vue'
 import ChangePassword from '../components/ChangePassword.vue'
 import SearchBar from '../components/SearchBar.vue'
 import DoctorCard from '../components/DoctorCard.vue'
+import NavBar from '../components/NavBar.vue'
 
 export default {
     name:"Patient",
@@ -22,19 +23,20 @@ export default {
             } catch (error) {
                 console.log(error);
             }
-        },
         }
-    }
+    },
     components:{
-        Update,
-        ChangePassword,
-        SearchBar,
-        DoctorCard
-    }
+    Update,
+    ChangePassword,
+    SearchBar,
+    DoctorCard,
+    NavBar
+}
 }
 
 </script>
 <template>
+<NavBar></NavBar>
     <body>
         <div class="container">
             <div class="row ">

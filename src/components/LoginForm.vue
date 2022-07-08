@@ -56,7 +56,11 @@ export default {
         <div class="mb-3 col-md-11">
             <p> <a href="#" style="margin-left: 5px;">Esqueceu a senha?</a> </p>
             <button id="btn-signup" class="btn btn-primary col-md-12" type="submit" @click="Login($event)" :disabled="VerifyInput()" >Se inscrever</button>
-            <p class="card-text">Não tem uma conta? <a href="#" class="card-link">Inscreva-se</a></p>
+            <p class="card-text">Não tem uma conta?
+                <router-link to="/signup">
+                    <a href="#" class="card-link">Inscreva-se</a>
+                </router-link>
+            </p>
         </div>
     </div>
 </form>

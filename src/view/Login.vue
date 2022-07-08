@@ -1,5 +1,6 @@
 <script>
 import LoginForm from '../components/LoginForm.vue'
+import NavBar from '../components/NavBar.vue'
 
 export default {
     name: "Login",
@@ -8,11 +9,12 @@ export default {
             
         }
     },
-    components: {LoginForm } 
+    components: {LoginForm, NavBar } 
 }
 </script>
 
 <template>
+<NavBar></NavBar>
     <div class="row">
         <div class="col-sm-5 col-md-6 bg-light d-md-block d-none">
             IMAGEM
@@ -24,7 +26,6 @@ export default {
 </template>
 
 <style scoped>
-
 
 
 </style>

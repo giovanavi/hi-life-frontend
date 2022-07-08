@@ -5,9 +5,9 @@ export default {
 </script>
 
 <template>
-    <footer class="page-footer font-small bg-dark">
-        <div class="footer-copyright text-center py-3">© 2022 Copyright:
-            <a href="/"> MDBootstrap.com</a>
+    <footer class="bg-dark">
+        <div class="footer-copyright text-center py-3"> 
+           <p> Hi-Life © 2022 </p>
         </div>
     </footer>
 </template>
@@ -16,5 +16,8 @@ export default {
 .footer {
     background-color: #343a40;
     color: #fff;
+}
+p{
+    color:#fff;
 }
 </style>

@@ -1,13 +1,15 @@
 <script>
 import SignupForm from '../components/SignupForm.vue'
+import NavBar from '../components/NavBar.vue'
 
 export default {
     name: "Signup",
-    components: { SignupForm }
+    components: { SignupForm, NavBar }
 }
 </script>
 
 <template>
+<NavBar></NavBar>
     <div class="row">
         <div class="col-sm-5 col-md-6 bg-light d-md-block d-none">
             IMAGEM

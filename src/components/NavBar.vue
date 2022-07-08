@@ -1,6 +1,14 @@
 <script>
 export default{
   name: "Navbar",
+  data(){
+    return{
+        patient : false
+    }
+  },
+  methods:{
+    //SE O PACIENTE ESTIVER LOGADO MUDA patient PARA TRUE 
+  }
 }
 
 </script>
@@ -30,14 +38,14 @@ export default{
                     </router-link>
                         
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" v-show="!patient">
                     <router-link to="/login">
                         <a href="#" class="nav-link">Login</a>
                     </router-link>
                 </li>
-                <li class="nav-item">
-                    <router-link to="/signup">
-                        <a href="#" class="nav-link">Cadastre-se</a>
+                <li class="nav-item" v-show="patient">
+                    <router-link to="/">
+                        <a href="#" class="nav-link">Logout</a>
                     </router-link>
                 </li>
             </ul>
