@@ -48,6 +48,11 @@ export default{
                         <a href="#" class="nav-link">Logout</a>
                     </router-link>
                 </li>
+                <li class="nav-item" v-show="patient">
+                    <router-link to="/">
+                        <a href="#" class="nav-link">Editar Perfil</a>
+                    </router-link>
+                </li>
             </ul>
         </div>
     </div>
