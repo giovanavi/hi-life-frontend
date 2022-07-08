@@ -3,14 +3,14 @@ import Update from '../components/Update.vue';
 import SignupForm from '../components/SignupForm.vue';
 import ChangePassword from '../components/ChangePassword.vue';
 import NavBar from '../components/NavBar.vue'
-import DataPicker from '../components/DataPicker.vue';
+import DatePicker from '../components/DatePicker.vue';
 
 export default {
     name: "Home",
     data() {
         return {};
     },
-    components: { Update, SignupForm, ChangePassword, NavBar, DataPicker }
+    components: { Update, SignupForm, ChangePassword, NavBar, DatePicker }
 }
 
 </script>
@@ -20,8 +20,11 @@ export default {
         <div id="main-banner">
             <h1>Hi-Life</h1>
         </div>
-        <Footer></Footer>
-    </body>   
+        <DatePicker></DatePicker>
+
+    </body> 
+            
+        <Footer></Footer>  
 </template>
 
 <style scoped>

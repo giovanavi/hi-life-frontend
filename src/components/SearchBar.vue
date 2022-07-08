@@ -1,6 +1,7 @@
 <script>
 export default {
-    name:"SearchBar"    
+    name:"SearchBar"
+
 }
 </script>
 
