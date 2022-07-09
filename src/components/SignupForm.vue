@@ -1,95 +1,119 @@
 <script>
+import axio from 'axios';
+
 export default {
-    name: "SignupForm"
+    name: 'Register',
+    data() {
+        return {
+            form: {
+                name: '',
+                email: '',
+                password: '',
+                password_confirmation: '',
+                cep: '',
+                address: {
+                    city: '',
+                    road: '',
+                    state: '',
+                    district: ''
+                }
+            }
+        }
+    },
+    methods: {
+        async Register(e) {
+            e.preventDefault();
+            try {
+                this.form.address = `${this.form.address.city} ${this.form.address.road} ${this.form.address.state} ${this.form.address.district}`;
+                console.log(this.form);
+                const {data} = await axio.post('http://hilifeapi4-env.eba-9z5dxudh.us-east-1.elasticbeanstalk.com/api/v1/Auth/Patient/register', this.form);
+                console.log(data);
+            } catch (error) {
+                console.log(error);
+                if (error.response.status === 401) {
+                    alert('Usuário ou senha incorretos');
+                }
+            }
+        }
+    }
 }
 </script>
 
 <template>
-<form class="row g-3 needs-validation" novalidate>
+    <form class="row g-3 needs-validation" novalidate>
 		<div class="row g-3">
 			    <!-- First Name -->
 			<div class="col-md-6">
 				<label class="form-label">Nome completo</label>
-				<input type="text" class="form-control" placeholder="" aria-label="First name" value="Scaralet">
+				<input type="text" class="form-control" placeholder="" v-model="form.name" :id="name" aria-label="First name" >
 			</div>
 			    <!-- Email -->
 			<div class="col-md-6">
 				<label class="form-label">E-mail</label>
-				<input type="email" class="form-control" placeholder="" aria-label="Last name" value="Doe">
-			</div><!--Endereço-->
-            <div class="col-md-5">
-                <label for="" class="form-label">Cidade</label>
-                <input type="text" class="form-control" id="email" placeholder="" required>
-                <div class="invalid-feedback">
-                    Informe um e-mail válido!
-                </div>
-            </div>
-            <div class="col-md-5">
-                <label for="" class="form-label">Rua</label>
-                <input type="text" class="form-control" id="email" placeholder="" required>
-                    <div class="invalid-feedback">
-                        Informe um e-mail válido!
-                    </div>
-            </div>
-            <div class="col-md-2">
-                <label for="" class="form-label">Número</label>
-                <input type="text" class="form-control" id="email" placeholder="" required>
-                    <div class="invalid-feedback">
-                        Informe um e-mail válido!
-                    </div>
-            </div><!--Data de nascimento-->
-            <div class="row g-2">
-                <div> 
-                    <p>Data de nascimento</p> <!--ajustar a altura-->
-                </div>
-                <div class="col-md-4">
-                    <label for="selectMonth">Mês</label>
-                    <select class="form-select" id="month" required>
-                        <option> </option>
-                    </select>    
-                        <div class="invalid-feedback">
-                            Campo obrigatório
-                        </div>
-                </div>
-                <div class="col-md-4">
-                    <label for="selectMonth">Dia</label>
-                    <select class="form-select" id="day" required>
-                        <option> </option>
-                    </select>    
-                        <div class="invalid-feedback">
-                            Campo obrigatório
-                        </div>
-                </div>
-                <div class="col-md-4">
-                    <label for="selectMonth">Year</label>
-                    <select class="form-select" id="uear" required>
-                        <option> </option>
-                    </select>    
-                        <div class="invalid-feedback">
-                            Campo obrigatório
-                        </div>
-                </div>
-            </div>
+				<input type="email" class="form-control" placeholder="" v-model="form.email" :id="email" aria-label="Last name">
+			</div>
+            
             <!--Senha-->
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <label for="" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="email" placeholder="" required>
+                <input type="password" class="form-control" v-model="form.password" :id="password" placeholder="" required>
                     <div class="invalid-feedback">
                         Informe um e-mail válido!
                     </div>
             </div>
             <!--Confirmação de senha-->
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <label for="" class="form-label">Confirmação de senha</label>
-                <input type="password" class="form-control" id="email" placeholder="" required>
+                <input type="password" class="form-control" v-model="form.password_confirmation" :id="password_confirmation" placeholder="" required>
                     <div class="invalid-feedback">
                         Informe um e-mail válido!
                     </div>
             </div>
+            
+            
+            <!--Endereço-->
+            <div class="d-flex justity-content-betwenn">
+                <div class="p-2" >
+                    <label for="" class="form-label">CEP</label>
+                    <input type="text" class="form-control" v-model="form.cep" :id="cep" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Informe um cep válido!
+                        </div>
+                </div>
+                <div class="p-2">
+                    <label for="" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" v-model="form.address.city" :id="city" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Informe um cidade válido!
+                        </div>
+                </div>
+                <div class="p-2">
+                    <label for="" class="form-label">Estado</label>
+                    <input type="text" class="form-control" v-model="form.address.state" :id="state" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Informe um estado válido!
+                        </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="" class="form-label">Rua</label>
+                <input type="text" class="form-control" v-model="form.address.road" :id="road" placeholder="" required>
+                    <div class="invalid-feedback">
+                        Informe um e-mail válido!
+                    </div>
+            </div>
+            <div class="col-md-6">
+                <label for="" class="form-label">Bairro</label>
+                <input type="text" class="form-control" v-model="form.address.district" :id="district" placeholder="" required>
+                    <div class="invalid-feedback">
+                        Informe um e-mail válido!
+                    </div>
+            </div>
+            
             <div class="col-12">
-                <button id="btn-signup" class="btn btn-primary col-md-12" type="submit" disabled="true">Cadastrar</button>
+                <button id="btn-signup" class="btn btn-primary col-md-12" type="submit" @click="Register($event)">Cadastrar</button>
             </div>
         </div>
-</form>
+    </form>
 
 </template>

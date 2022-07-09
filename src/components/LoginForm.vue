@@ -14,7 +14,9 @@ export default {
     methods:{
         async Login(e){
             e.preventDefault();
+            console.log(this.form);
             try{
+                
                 const {data} = await axios.post('http://hilifeapi4-env.eba-9z5dxudh.us-east-1.elasticbeanstalk.com/api/v1/Auth/Patient/signin', this.form);
                 console.log(data.acessToken);
                 
@@ -22,7 +24,9 @@ export default {
                 localStorage.setItem('id', JSON.stringify(data.idUser));
                 this.$router.push('/');
             } catch(error){
-                console.log(error);
+                if (error.response.status === 401){
+                    alert('Usuário ou senha incorretos');
+                }
             }
         },
         VerifyInput() {
