@@ -20,10 +20,8 @@ export default {
         <div id="main-banner">
             <h1>Hi-Life</h1>
         </div>
-        <DatePicker></DatePicker>
-
     </body> 
-            
+      
         <Footer></Footer>  
 </template>
 

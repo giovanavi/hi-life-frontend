@@ -43,7 +43,7 @@ export default {
     SearchBar,
     DoctorCard,
     NavBar
-}
+    }
 }
 
 </script>
@@ -58,7 +58,8 @@ export default {
                 </div>
             </div>
         </div>
-    </body>   
+    </body>  
+
 </template>
 
 <style scoped>

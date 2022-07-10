@@ -13,38 +13,6 @@ export default {
 <template>
 
 <div>
-    <div class="overlay">
-        <div class="modal">
-            <div class="flex items-center justify-bettween p-3">
-                <span> Modal Title </span>
-                
-                <button>X</button>
-            </div>
-        </div>
-        <div class="p-3 bg-dark">
-            <div class="mb-4"> 
-                <p>Marcar a Consulta</p> 
-            </div>
-                <form class="">
-                    <div id="date-picker" inline="true">
-                        <label for="example">Escolha a data para a consulta</label>
-                        <input v-model="myDate" placeholder="Select date" type="date" id="example" class="form-control">
-                    </div>
-                    <div class="row">
-                        <div id="time-picker" class="col-mb-2" inline="true">
-                            <label for="example">Escolha o horário consulta</label>
-                            <input v-model="myDate" placeholder="Select date" type="time" id="example" class="form-control">
-                        </div>
-                    </div>
-                </form>
-            <button class="p-2 text-sm rounded">
-                Confirm
-            </button>
-            <button class="p-2 text-sm rounded">
-                Exit
-            </button>
-        </div>
-    </div>
 
 </div>
 

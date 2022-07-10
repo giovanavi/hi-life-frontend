@@ -8,6 +8,7 @@ export default {
     },
     data(){
       return{
+        isVisible: false, 
         id: '',
         hospitalName: '',
         name: '',
@@ -49,6 +50,9 @@ export default {
         console.log(this.availableTimes);
         this.appointments = this.doctor.appointments;
       },
+      splitDate(){
+        
+      }
     }
   }
 </script>
@@ -61,10 +65,17 @@ export default {
     <p class="card-text"> Hospital de atendimento : {{hospitalName}}</p>
     <p class="card-text">Especialidade : {{specialty}}</p>
     <p class="card-text">CRM : {{crm}}</p>
-      <DatePicker></DatePicker>
-      <button @click.prevent="toogleModal" class="bg-blue-500  p-2 text-sm rounded">
-        Open Modal
-      </button>
+      <div class="d-flex align-items-center">
+        <select class="flex-fill form-select" >
+          <option selected>Selecione o horário da consulta</option>
+          <option v-for="time in availableTimes" v-bind:key="time.id">
+            {{time.time}}
+          </option>
+        </select>
+          <button class="btn btn-secondary btn-sm flex-fill rounded">
+            Marcar consulta
+          </button> 
+        </div>
   </div>
 </div>
 

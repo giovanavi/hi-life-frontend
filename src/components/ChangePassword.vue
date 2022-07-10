@@ -2,38 +2,29 @@
 <div class="container">
 	<div class="row">
 		<div class="col-12">
-            <div class="row g-5">
-				<!-- change password -->
-				<div class="col-mb-6">
-					<div class="bg-secondary px-4 py-5 rounded">
-						<div class="row g-3">
-							<h4 class="my-4">Change Password</h4>
-							<!-- Old password -->
-							<div class="col-md-6">
-								<label for="exampleInputPassword1" class="form-label">Old password *</label>
-								<input type="password" class="form-control" id="exampleInputPassword1">
-							</div>
-							<!-- New password -->
-							<div class="col-md-6">
-								<label for="exampleInputPassword2" class="form-label">New password *</label>
-								<input type="password" class="form-control" id="exampleInputPassword2">
-							</div>
-							<!-- Confirm password -->
-							<div class="col-md-12">
-							    <label for="exampleInputPassword3" class="form-label">Confirm Password *</label>
-								<input type="password" class="form-control" id="exampleInputPassword3">
-							</div>
-						</div>
-					</div>
-				</div>
-		    </div> <!-- Row END -->
-            <div class="row g-3"> 
-				<div class="d-md-flex justify-content-md-end">
-					<button type="button" class="btn btn-danger btn-lg">Delete profile</button>
-					<button type="button" class="btn btn-primary btn-lg">Update profile</button>
-	    		</div>
+			<!-- Page title -->
+			<div class="p-3">
+				<h3>Alterar Senha</h3>
+				<hr>
 			</div>
-        </div>
-    </div>
+			<!-- Form START -->
+			<form class="row g-3">	
+				<div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+					<input type="password" class="form-control form-control-lg" placeholder="Senha Antiga">
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+					<input type="password" class="form-control form-control-lg" placeholder="Nova senha">
+				</div>
+				<div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+					<input type="password" class="form-control form-control-lg" placeholder="Confirmação de senha">
+				</div>
+
+				<div class="p-3 d-md-flex justify-content-md-end">
+					<button class="btn btn-danger btn-lg " type="submit"> Cancelar </button>
+					<button class="btn btn-primary btn-lg " type="submit"> Alterar </button>
+				</div>
+			</form> <!-- Form END -->
+		</div>
+	</div>
 </div>
 </template>

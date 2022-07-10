@@ -15,11 +15,12 @@ export default {
 
 <template>
 <NavBar></NavBar>
-    <div class="row">
-        <div class="col-sm-5 col-md-6 bg-light d-md-block d-none">
+    <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-md-6 col-lg-5 col-xl-6 bg-light d-md-block d-none">
             IMAGEM
         </div>
-        <div class="col-sm-5 col-md-6 col-xs-12">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-xl-6">
+            <h2 class="p-3 text-center">Login</h2>
             <LoginForm></LoginForm>
         </div>
     </div>

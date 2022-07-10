@@ -22,12 +22,12 @@ export default {
 <NavBar></NavBar>
     <body>
         <div class="container">
-            <div class="row ">
-                <div class="col mb-4">
-                    <SearchBar></SearchBar>
-                    <DoctorCard></DoctorCard>
+            <SearchBar class="p-5"></SearchBar>
+                <div class="row row-cols-2">
+                    <div v-for="doctor in doctors" v-bind:key="doctor.id">
+                        <DoctorCard class="col mb-3" :doctor="doctor"></DoctorCard>
+                    </div>
                 </div>
-            </div>
         </div>
     </body>   
 </template>
