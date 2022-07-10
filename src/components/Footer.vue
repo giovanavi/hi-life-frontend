@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <div class="footer bg-dark">
+    <div class="footer">
         <div class="footer-copyright text-center py-3"> 
            <p> Hi-Life © 2022 </p>
         </div>
@@ -17,10 +17,11 @@ export default {
     position:static;
     left:0;
     bottom:0;   
-    background-color: #343a40;
-    color: #fff;
+    background-color: #87CEFA;
 }
 p{
-    color:#fff;
+    color:white;
+    font-size:larger;
+    font-weight: bold;
 }
 </style>

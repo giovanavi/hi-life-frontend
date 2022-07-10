@@ -15,7 +15,7 @@ export default{
 
 
 <template>
-<nav class="navbar navbar-expand-sm bg-dark">
+<nav class="navbar navbar-expand-sm ">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <img src="" alt="" width="30" height="24" class="d-inline-block align-text-top">
@@ -60,14 +60,22 @@ export default{
 </template>
 
 <style scoped>
+
+
 .navbar{
     height: 80px;
+    background-color: #87CEFA;
 }
 .nav-item{
-    font-size: large;
-}
+    font-size:larger; 
+    font-weight: bold;
+}   
+
 a {
-    color: aliceblue;
+    color: white;
     text-decoration: none;
+}
+a:hover{
+    color: #4C88AD;
 }
 </style>
