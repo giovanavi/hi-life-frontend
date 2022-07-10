@@ -65,17 +65,21 @@ export default {
     <p class="card-text"> Hospital de atendimento : {{hospitalName}}</p>
     <p class="card-text">Especialidade : {{specialty}}</p>
     <p class="card-text">CRM : {{crm}}</p>
-      <div class="d-flex align-items-center">
-        <select class="flex-fill form-select" >
-          <option selected>Selecione o horário da consulta</option>
-          <option v-for="time in availableTimes" v-bind:key="time.id">
-            {{time.time}}
-          </option>
-        </select>
-          <button class="btn btn-secondary btn-sm flex-fill rounded">
-            Marcar consulta
-          </button> 
-        </div>
+      <div class="d-flex justify-content-between">
+        <form class="row flex-fill">
+            <div class="col-auto flex-fill">
+              <select class="form-select" >
+                <option selected>Selecione o horário da consulta</option>
+                <option v-for="time in availableTimes" v-bind:key="time.id">
+                  {{time.time}}
+                </option>
+              </select>
+            </div>
+            <div class="col">
+              <button class="btn btn-primary" type="submit">Agendar</button>
+            </div>
+        </form>
+      </div>
   </div>
 </div>
 

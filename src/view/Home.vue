@@ -8,7 +8,9 @@ import DatePicker from '../components/DatePicker.vue';
 export default {
     name: "Home",
     data() {
-        return {};
+        return {
+            isLoggedIn: false
+        };
     },
     components: { Update, SignupForm, ChangePassword, NavBar, DatePicker }
 }
@@ -16,7 +18,7 @@ export default {
 </script>
 <template>
     <body>
-        <NavBar></NavBar>
+        <NavBar :isLoggedIn="isLoggedIn"></NavBar>
         <div id="main-banner">
             <h1>Hi-Life</h1>
         </div>

@@ -19,6 +19,7 @@ export default {
     bottom:0;   
     background-color: #343a40;
     color: #fff;
+    
 }
 p{
     color:#fff;

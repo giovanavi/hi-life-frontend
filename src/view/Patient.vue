@@ -13,6 +13,7 @@ export default {
         return{
             patient: null,
             doctors: [],
+            isLoggedIn: true
         }
     },
     mounted() {
@@ -48,7 +49,7 @@ export default {
 
 </script>
 <template>
-<NavBar></NavBar>
+<NavBar :isLoggedIn="isLoggedIn"></NavBar>
     <body>
         <div class="container">
         <SearchBar class="p-5"></SearchBar>

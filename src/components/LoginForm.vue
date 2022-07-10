@@ -2,6 +2,7 @@
 import axios from 'axios';
 
 export default {
+    
     data(){
         return {
             form: {
@@ -22,7 +23,7 @@ export default {
                 
                 localStorage.setItem('token', data.acessToken);
                 localStorage.setItem('id', JSON.stringify(data.idUser));
-                this.$router.push('/');
+                this.$router.push('/patient');
             } catch(error){
                 if (error.response.status === 401){
                     alert('Usuário ou senha incorretos');
@@ -55,7 +56,7 @@ export default {
     </div>
     <div class="mb-3 offset-sm-1 col-sm-10 col-md-10 col-lg-11 col-xl-10">
         <p> <a href="#" >Esqueceu a senha?</a> </p>
-        <button class="col-12 btn btn-primary btn-lg " type="submit" @click="Login($event)" :disabled="VerifyInput()">Se inscrever</button>
+        <button class="col-12 btn btn-primary btn-lg " type="submit" @click="Login($event)" :disabled="VerifyInput()">Entrar</button>
         <p class="mb-3 pt-2 card-text">Não tem uma conta?
             <router-link to="/signup">
                 <a href="#" class="card-link">Inscreva-se</a>

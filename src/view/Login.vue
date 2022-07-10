@@ -6,7 +6,7 @@ export default {
     name: "Login",
     data(){
         return{
-            
+            isLoggedIn: false
         }
     },
     components: {LoginForm, NavBar } 
@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-<NavBar></NavBar>
+<NavBar :isLoggedIn="false"></NavBar>
     <div class="row d-flex align-items-center justify-content-center">
         <div class="col-md-6 col-lg-5 col-xl-6 bg-light d-md-block d-none">
             IMAGEM

@@ -7,7 +7,7 @@ export default {
     name:"Doctor",
     data(){
         return{
-
+            isLoggedIn: false
         }
     },
     components:{
@@ -19,15 +19,15 @@ export default {
 
 </script>
 <template>
-<NavBar></NavBar>
+<NavBar :isLoggedIn="isLoggedIn"></NavBar>
     <body>
         <div class="container">
             <SearchBar class="p-5"></SearchBar>
-                <div class="row row-cols-2">
-                    <div v-for="doctor in doctors" v-bind:key="doctor.id">
-                        <DoctorCard class="col mb-3" :doctor="doctor"></DoctorCard>
-                    </div>
+            <div class="row row-cols-2">
+                <div v-for="doctor in doctors" v-bind:key="doctor.id">
+                    <DoctorCard class="col mb-3" :doctor="doctor"></DoctorCard>
                 </div>
+            </div>
         </div>
     </body>   
 </template>
