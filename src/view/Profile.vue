@@ -22,5 +22,5 @@ export default {
             <SignupForm isLoggedIn="isLoggedIn"></SignupForm>
         </div>
     </div>
-    
+    <Footer></Footer>
 </template>
