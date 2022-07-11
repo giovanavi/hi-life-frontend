@@ -1,7 +1,41 @@
-# Vue 3 + Vite
+# NOME DO PROJETO
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Breve descriÃ§Ã£o do que o seu projeto faz.
 
-## Recommended IDE Setup
+## Membros da equipe
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+- Nome do dos participantes
+
+## Tecnologias e frameworks utilizados
+
+**Frontend:**
+
+Breve descriÃ§Ã£o das tecnologias utilizadas.
+
+**Backend:**
+
+Breve descriÃ§Ã£o das tecnologias utilizadas.
+
+## PapÃ©is ou tipos de usuÃ¡rio do sistema
+
+Ex de papÃ©is:
+Adminstrador, aluno, professor, usuÃ¡rio nÃ£o autenticado
+## Entidades, Tabelas ou ColeÃ§Ãµes utilizadas
+
+- Nome das tabelas (bancos sql) ou coleÃ§Ãµes (bancos nosql) utilizadas
+
+OperaÃ§Ãµes implementadas para cada entidade
+
+| Entidade| Create | Read | Update | Delete |
+| --- | --- | --- | --- | --- |
+| Entidade 1 | X |  X  |  | X |
+| Entidade 2 | X |    |  X | X |
+| Entidade 3 | X |    |  |  |
+
+## Rotas da API REST utilizadas
+
+
+| MÃ©todo HTTP | URL |
+| --- | --- |
+| GET | api/entidade1/|
+| POST | api/entidade2 |
