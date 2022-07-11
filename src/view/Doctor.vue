@@ -29,7 +29,9 @@ export default {
                 </div>
             </div>
         </div>
-    </body>   
+    </body>  
+    
+    <Footer></Footer>
 </template>
 
 <style scoped>

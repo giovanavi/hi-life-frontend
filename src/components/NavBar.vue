@@ -21,40 +21,49 @@ export default{
 <template>
 <nav class="navbar navbar-expand-sm ">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="" alt="" width="30" height="24" class="d-inline-block align-text-top">
-        </a>
         <div class="collapse navbar-collapse " id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item" v-if="!isLogged">
                     <router-link to="/">
-                        <a href="#" class="nav-link" aria-current="page">Home</a>
+                        <a href="#" class="nav-link" aria-current="page">
+                            <img src="../assets/home.svg" title="Home" width="30" height="30">
+                        </a>
                     </router-link>
                 </li>
                 <li class="nav-item" v-if="!isLogged">
                     <router-link to="/doctor">
-                        <a href="#" class="nav-link" >Médicos</a>
+                        <a href="#" class="nav-link" >
+                            <img src="../assets/icon.svg" title="Médico" width="30" height="30">
+                        </a>
                     </router-link>
                 </li>
                 <li class="nav-item" v-if="!isLogged">
                     <router-link to="/login">
-                        <a href="#" class="nav-link">Login</a>
+                        <a href="#" class="nav-link">
+                            <img src="../assets/login.svg" title="Entrar" width="30" height="30">   
+                        </a>
                     </router-link>
                 </li>
                 <li class="nav-item" v-if="isLogged">
                     <router-link to="/profile">
-                        <a href="#" class="nav-link">Profile</a>
+                        <a href="#" class="nav-link">
+                            <img src="../assets/profile.svg" title="Perfil" width="30" height="30">
+                        </a>
                     </router-link>
                 </li>
                 <li class="nav-item" v-if="isLogged">
                     <router-link to="/patient">
-                        <a href="#" class="nav-link">Paciente</a>
+                        <a href="#" class="nav-link">
+                            <img src="../assets/icon.svg" title="Paciente" width="30" height="30">
+                        </a>
                     </router-link>
                         
                 </li>
                 <li class="nav-item" v-if="isLogged">
                     <router-link to="/">
-                        <a href="#" class="nav-link">Logout</a>
+                        <a href="#" class="nav-link">
+                            <img src="../assets/logout.svg" title="Sair" width="30" height="30">
+                        </a>
                     </router-link>
                 </li>
             </ul>
@@ -68,7 +77,7 @@ export default{
 
 .navbar{
     height: 80px;
-    background-color: #87CEFA;
+    background-color: #4C88AD;
 }
 .nav-item{
     font-size:larger; 
@@ -80,6 +89,6 @@ a {
     text-decoration: none;
 }
 a:hover{
-    color: #4C88AD;
+    color: #87CEFA;
 }
 </style>
