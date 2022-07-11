@@ -50,14 +50,13 @@ export default {
 <NavBar :isLoggedIn="isLoggedIn"></NavBar>
     <body>
         <div class="container">
-        <SearchBar class="p-5"></SearchBar>
+            <SearchBar class="p-5"></SearchBar>
             <div class="row row-cols-2">
                 <div v-for="doctor in doctors" v-bind:key="doctor.id">
-                    <DoctorCard class="col mb-3" :doctor="doctor"></DoctorCard>
+                    <DoctorCard class="col mb-3" :doctor="doctor" :isLoggedIn="isLoggedIn"></DoctorCard>
                 </div>
             </div>
         </div>
-        <Footer></Footer>
     </body>  
 
 </template>

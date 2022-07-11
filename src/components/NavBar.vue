@@ -12,7 +12,14 @@ export default{
     }
   }, mounted() {
     this.isLogged = this.isLoggedIn;
-  }
+  },
+    methods: {
+        logout() {
+            localStorage.removeItem('id');
+            localStorage.removeItem('token');
+            this.$router.push('/');
+        }
+    }
 }
 
 </script>
@@ -26,6 +33,7 @@ export default{
                 <li class="nav-item" v-if="!isLogged">
                     <router-link to="/">
                         <a href="#" class="nav-link" aria-current="page">
+                            Home
                             <img src="../assets/home.svg" title="Home" width="30" height="30">
                         </a>
                     </router-link>
@@ -33,6 +41,7 @@ export default{
                 <li class="nav-item" v-if="!isLogged">
                     <router-link to="/doctor">
                         <a href="#" class="nav-link" >
+                            Médicos
                             <img src="../assets/icon.svg" title="Médico" width="30" height="30">
                         </a>
                     </router-link>
@@ -40,6 +49,7 @@ export default{
                 <li class="nav-item" v-if="!isLogged">
                     <router-link to="/login">
                         <a href="#" class="nav-link">
+                            Login
                             <img src="../assets/login.svg" title="Entrar" width="30" height="30">   
                         </a>
                     </router-link>
@@ -47,6 +57,7 @@ export default{
                 <li class="nav-item" v-if="isLogged">
                     <router-link to="/profile">
                         <a href="#" class="nav-link">
+                            Perfil
                             <img src="../assets/profile.svg" title="Perfil" width="30" height="30">
                         </a>
                     </router-link>
@@ -54,17 +65,17 @@ export default{
                 <li class="nav-item" v-if="isLogged">
                     <router-link to="/patient">
                         <a href="#" class="nav-link">
+                            Paciente
                             <img src="../assets/icon.svg" title="Paciente" width="30" height="30">
                         </a>
                     </router-link>
                         
                 </li>
                 <li class="nav-item" v-if="isLogged">
-                    <router-link to="/">
-                        <a href="#" class="nav-link">
-                            <img src="../assets/logout.svg" title="Sair" width="30" height="30">
-                        </a>
-                    </router-link>
+                    <a href="#" class="nav-link" @click="logout">
+                        Logout
+                        <img src="../assets/logout.svg" title="Sair" width="30" height="30">
+                    </a>
                 </li>
             </ul>
         </div>

@@ -15,28 +15,37 @@ apenas o paciente logado no sistema poderia consulta com o médico escolhido, no
 **HTML**, **CSS**  e **JavaScript**.
 
 **Backend:**
-- Breve descriÃ§Ã£o das tecnologias utilizadas.
+- Para o backend foi utilizado o framework **.NET Core**, utilizando a linguagen **C#**.
+- Usamos também o banco de dados relaciol **MySQL**
+- Deploy do projeto na **AWS - ElasticBeansTalk**
+- Documentação Online via **Swagger**
+## Papéis ou tipos de usuário do sistema
 
-## PapÃ©is ou tipos de usuÃ¡rio do sistema
-
-- Não autenticado e Paciente
+- Paciente não autenticado 
+- Paciente autenticado 
+- Médico autenticado 
+- Médico não autenticado
 
 ## Entidades, Tabelas ou ColeÃ§Ãµes utilizadas
 
-- Nome das tabelas (bancos sql) ou coleÃ§Ãµes (bancos nosql) utilizadas
+Nome das tabelas (bancos sql) ou coleções (bancos nosql) utilizadas
+- Patient - Paciente
+- Doctor - Médico
+- AvailableTimes - Coleções de Horários disponíveis do médico
+- Appointments - Coleções de Consultas do médico
 
-OperaÃ§Ãµes implementadas para cada entidade
+
+Operações implementadas para cada entidade
 
 | Entidade| Create | Read | Update | Delete |
 | --- | --- | --- | --- | --- |
-| Entidade 1 | X |  X  |  | X |
-| Entidade 2 | X |    |  X | X |
-| Entidade 3 | X |    |  |  |
+| Patient | ✅🌐 |  ✅🌐  | ✅🌐 | ✅🌐 |
+| Doctor | ✅ |  ✅🌐  |  ✅ | ✅ |
+| AvailableTimes | ✅ |  ✅🌐  | ❌ | ❌ |
+| Appointment | ✅ | ✅ | ✅ | ✅
+
+- OBS: 🌐 - Operações que o front consume da API
 
 ## Rotas da API REST utilizadas
 
-
-| MÃ©todo HTTP | URL |
-| --- | --- |
-| GET | api/entidade1/|
-| POST | api/entidade2 |
+OpenAPI com Documentação via Swagger [HiLife-API](http://hilifeapi4-env.eba-9z5dxudh.us-east-1.elasticbeanstalk.com/swagger/index.html)

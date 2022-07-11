@@ -5,10 +5,11 @@ export default {
     name:"DoctorCard",
     props: {
         doctor: null,
+        isLoggedIn: null
     },
     data(){
       return{
-        isVisible: false, 
+        isLogged: null, 
         id: '',
         hospitalName: '',
         name: '',
@@ -34,6 +35,8 @@ export default {
     },
     mounted() {
       this.populateDoctor();
+      this.isLogged = this.isLoggedIn;
+      console.log(this.isLogged);
     },
     methods: {
       toogleModal(){
@@ -76,7 +79,7 @@ export default {
               </select>
             </div>
             <div class="col">
-              <button class="btn btn-primary" type="submit">Agendar</button>
+              <button class="btn btn-primary" type="submit" :disabled="!isLogged">Agendar</button>
             </div>
         </form>
       </div>
