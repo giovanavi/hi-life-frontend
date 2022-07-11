@@ -17,6 +17,7 @@ export default {
                 name: '',
                 email: '',
                 password: '',
+                password_confirmation: '',
                 cep: '',
                 address: {
                     city: '',
@@ -30,15 +31,25 @@ export default {
     methods: {
         async Register(e) {
             e.preventDefault();
-            console.log(e);
 
             if (this.VerifyInput()) {
                 try {
-                    this.form.address = `${this.form.address.city}, ${this.form.address.road}, ${this.form.address.state}, ${this.form.address.district}`;
-                    console.log(this.form);
-                    const {data} = await axio.post('http://hilifeapi4-env.eba-9z5dxudh.us-east-1.elasticbeanstalk.com/api/v1/Auth/Patient/register', this.form);
-                    localStorage.setItem('id', data.id);
-                    localStorage.setItem('token', data.token);
+                    let address = `${this.form.address.city}, ${this.form.address.road}, ${this.form.address.state}, ${this.form.address.district}`;
+                    let form = {
+                        name: this.form.name,
+                        email: this.form.email,
+                        password: this.form.password,
+                        cep: this.form.cep,
+                        address: address
+                    };
+
+                    const { data }  = await axio.post('http://hilifeapi4-env.eba-9z5dxudh.us-east-1.elasticbeanstalk.com/api/v1/Auth/Patient/register', form);
+                
+                    console.log(data.result.idUser);
+                    localStorage.setItem('id', data.result.idUser);
+                    localStorage.setItem('token', data.result.acessToken);
+
+
                     alert('Usuário cadastrado com sucesso!');
                     this.$router.push('/Patient');
                 } catch (error) {
