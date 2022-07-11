@@ -4,7 +4,6 @@ import Signup from './view/Signup.vue'
 import NavBar from './components/NavBar.vue'
 import Footer from './components/Footer.vue'
 import Home from './view/Home.vue'
-import Update from './components/Update.vue'
 import Patient from './view/Patient.vue' 
 
 export default{
