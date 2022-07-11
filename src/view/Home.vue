@@ -1,5 +1,4 @@
 <script>
-import Update from '../components/Update.vue';
 import SignupForm from '../components/SignupForm.vue';
 import ChangePassword from '../components/ChangePassword.vue';
 import NavBar from '../components/NavBar.vue'
@@ -12,7 +11,7 @@ export default {
             isLoggedIn: false
         };
     },
-    components: { Update, SignupForm, ChangePassword, NavBar, DatePicker }
+    components: { SignupForm, ChangePassword, NavBar, DatePicker }
 }
 
 </script>

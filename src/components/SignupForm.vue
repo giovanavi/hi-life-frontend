@@ -13,10 +13,10 @@ export default {
             isLogged: null,
             mypatient: null,
             form: {
+                id: '',	
                 name: '',
                 email: '',
                 password: '',
-                password_confirmation: '',
                 cep: '',
                 address: {
                     city: '',
@@ -63,6 +63,45 @@ export default {
                 alert('Erro ao buscar usuário');
             }
         },
+        async UpdatePatient(e) {
+            e.preventDefault();
+            console.log(e);
+            try {
+                let address = `${this.form.address.city}, ${this.form.address.road}, ${this.form.address.state}, ${this.form.address.district}`;
+                let form = {
+                    id: this.form.id,
+                    name: this.form.name,
+                    email: this.form.email,
+                    password: this.form.password,
+                    cep: this.form.cep,
+                    address: address
+                };
+                const {data} = await axio.put('http://hilifeapi4-env.eba-9z5dxudh.us-east-1.elasticbeanstalk.com/api/Patient/', form, {
+                    headers: {
+                        'Authorization': 'Bearer ' + localStorage.getItem('token')
+                    }
+                });
+                alert('Usuário atualizado com sucesso!');
+            } catch (error) {
+                alert('Erro ao atualizar');
+            }
+        },
+        async DeletePatient(e) {
+            e.preventDefault();
+            if(confirm('Deseja realmente excluir o usuário')) {
+                try {
+                    const {data} = await axio.delete('http://hilifeapi4-env.eba-9z5dxudh.us-east-1.elasticbeanstalk.com/api/Patient/' + this.form.id, {
+                        headers: {
+                            'Authorization': 'Bearer ' + localStorage.getItem('token')
+                        }
+                    });
+                    alert('Usuário deletado com sucesso!');
+                    this.$router.push('/');
+                } catch (error) {
+                    alert('Erro ao deletar');
+                }
+            }
+        },
         VerifyInput() {
             if(this.form.name == '' || this.form.email == '' || this.form.password == '' || this.form.password_confirmation == '' || this.form.cep == '' || this.form.address.city == '' || this.form.address.road == '' || this.form.address.state == '' || this.form.address.district == ''){
                 return false;
@@ -70,11 +109,12 @@ export default {
             return true;
         },
         populateForm(data) {
+            this.form.id = data.id;
             this.form.name = data.name;
             this.form.email = data.email;
             this.form.password = data.password;
             this.form.cep = data.cep;
-            let address = data.address.split(' ');
+            let address = data.address.split(',');
             this.form.address.city = address[0];
             this.form.address.road = address[1];
             this.form.address.state = address[2];
@@ -151,8 +191,10 @@ export default {
     
     <div class="mb-3 col-sm-12 col-md-12 col-lg-12 col-xl-12">
         <button class="col-12 btn btn-primary btn-lg " v-if="!isLogged" type="submit" @click="Register($event)">Cadastrar</button>
-        <button class="col-12 btn btn-primary btn-lg " v-if="isLogged" type="submit" @click="">Atualizar Perfil</button>
-        <button class="col-12 btn btn-danger btn-lg " v-if="isLogged" type="submit" @click="">Excluir Perfil</button>
+        <div class="d-flex justify-content-between">
+            <button class="btn btn-primary btn-lg " v-if="isLogged" type="submit" @click="UpdatePatient($event)">Atualizar Perfil</button>
+            <button class="btn btn-danger btn-lg " v-if="isLogged" type="submit" @click="DeletePatient($event)">Excluir Perfil</button>
+        </div>
     </div>
         
 </form>

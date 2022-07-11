@@ -1,5 +1,4 @@
 <script>
-import Update from '../components/Update.vue'
 import ChangePassword from '../components/ChangePassword.vue'
 import SearchBar from '../components/SearchBar.vue'
 import DoctorCard from '../components/DoctorCard.vue'
@@ -39,7 +38,6 @@ export default {
         },
     },
     components:{
-    Update,
     ChangePassword,
     SearchBar,
     DoctorCard,
