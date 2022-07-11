@@ -19,6 +19,8 @@ apenas o paciente logado no sistema poderia consulta com o médico escolhido, no
 - Usamos também o banco de dados relaciol **MySQL**
 - Deploy do projeto na **AWS - ElasticBeansTalk**
 - Documentação Online via **Swagger**
+- Repostório do projeto no GitHub [HiLife-API](https://github.com/aSTRonuun/web-server-HiLife-api)
+
 ## Papéis ou tipos de usuário do sistema
 
 - Paciente não autenticado 
@@ -44,7 +46,7 @@ Operações implementadas para cada entidade
 | AvailableTimes | ✅ |  ✅🌐  | ❌ | ❌ |
 | Appointment | ✅ | ✅ | ✅ | ✅
 
-- OBS: 🌐 - Operações que o front consume da API
+- OBS: 🌐 - Operações que o frontend consume da API
 
 ## Rotas da API REST utilizadas
 
