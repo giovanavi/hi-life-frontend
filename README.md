@@ -1,25 +1,26 @@
 # NOME DO PROJETO
 
-Breve descriÃ§Ã£o do que o seu projeto faz.
+O projeto Hi-Life conta com a pesquisa de médicos incluidos no sistemas. Onde 
+apenas o paciente logado no sistema poderia consulta com o médico escolhido, no horário escolhido. 
 
 ## Membros da equipe
 
-- Nome do dos participantes
+- Giovana Vieira e Vitor Alves
 
 ## Tecnologias e frameworks utilizados
 
 **Frontend:**
 
-Breve descriÃ§Ã£o das tecnologias utilizadas.
+- Para o fontend do projeto foi utilizado os framework **Vue.js** e **Bootstrap** para o desenvolvimento de cada componente e views do projeto, além de 
+**HTML**, **CSS**  e **JavaScript**.
 
 **Backend:**
-
-Breve descriÃ§Ã£o das tecnologias utilizadas.
+- Breve descriÃ§Ã£o das tecnologias utilizadas.
 
 ## PapÃ©is ou tipos de usuÃ¡rio do sistema
 
-Ex de papÃ©is:
-Adminstrador, aluno, professor, usuÃ¡rio nÃ£o autenticado
+- Não autenticado e Paciente
+
 ## Entidades, Tabelas ou ColeÃ§Ãµes utilizadas
 
 - Nome das tabelas (bancos sql) ou coleÃ§Ãµes (bancos nosql) utilizadas
