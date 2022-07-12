@@ -5,9 +5,11 @@ export default {
     name:"DoctorCard",
     props: {
         doctor: null,
+        isLoggedIn: null
     },
     data(){
       return{
+        isLogged: null, 
         id: '',
         hospitalName: '',
         name: '',
@@ -33,6 +35,8 @@ export default {
     },
     mounted() {
       this.populateDoctor();
+      this.isLogged = this.isLoggedIn;
+      console.log(this.isLogged);
     },
     methods: {
       toogleModal(){
@@ -44,15 +48,21 @@ export default {
         this.name = this.doctor.name;
         this.specialty = this.doctor.specialty;
         this.crm = this.doctor.crm;
+        console.log(this.doctor.availableTimes.length);
         for(let i = 0; i < this.doctor.availableTimes.length; i++) {
-          this.availableTimes[i].id = this.doctor.availableTimes[i].id;
-          this.availableTimes[i].day = this.doctor.availableTimes[i].time.replace(/T.*/g, '');
-          this.availableTimes[i].time = this.doctor.availableTimes[i].time.replace(/.*T/, '');
-          console.log(this.availableTimes[i]);
+          this.availableTimes.push({
+            id: this.doctor.availableTimes[i].id,
+            day: this.doctor.availableTimes[i].time.replace(/T.*/g, ''),
+            time: this.doctor.availableTimes[i].time.replace(/.*T/g, ''),
+          })
+
         }
         
         this.appointments = this.doctor.appointments;
       },
+      splitDate(){
+        
+      }
     }
   }
 </script>
@@ -65,14 +75,21 @@ export default {
     <p class="card-text"> Hospital de atendimento : {{hospitalName}}</p>
     <p class="card-text">Especialidade : {{specialty}}</p>
     <p class="card-text">CRM : {{crm}}</p>
-    <select class="form-select" aria-label="Default select example">
-      <option selected>Open this select menu</option>
-      
-    </select>
-      <DatePicker></DatePicker>
-      <button @click.prevent="toogleModal" class="bg-blue-500  p-2 text-sm rounded">
-        Open Modal
-      </button>
+      <div class="d-flex justify-content-between">
+        <form class="row flex-fill">
+            <div class="col-auto flex-fill">
+              <select class="form-select" >
+                <option selected>Selecione o horário da consulta</option>
+                <option v-for="time in availableTimes" v-bind:key="time.id">
+                  <span>{{time.day}} - {{time.time}}</span>
+                </option>
+              </select>
+            </div>
+            <div class="col">
+              <button class="btn btn-primary" type="submit" :disabled="!isLogged">Agendar</button>
+            </div>
+        </form>
+      </div>
   </div>
 </div>
 

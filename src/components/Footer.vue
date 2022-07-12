@@ -5,19 +5,21 @@ export default {
 </script>
 
 <template>
-    <footer class="bg-dark">
-        <div class="footer-copyright text-center py-3"> 
-           <p> Hi-Life © 2022 </p>
-        </div>
-    </footer>
+    <div class="footer-copyright text-center p-3" id="footer">
+        <p> Hi-Life © 2022 </p>
+    </div>
 </template>
 
 <style scoped>
-.footer {
-    background-color: #343a40;
+#footer {
+    width:100%;
+    height:60px; 
     color: #fff;
+    background-color: #4C88AD;
 }
 p{
-    color:#fff;
+    color:white;
+    font-size:larger;
+    font-weight: bold;
 }
 </style>

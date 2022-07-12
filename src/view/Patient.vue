@@ -1,5 +1,4 @@
 <script>
-import Update from '../components/Update.vue'
 import ChangePassword from '../components/ChangePassword.vue'
 import SearchBar from '../components/SearchBar.vue'
 import DoctorCard from '../components/DoctorCard.vue'
@@ -13,6 +12,7 @@ export default {
         return{
             patient: null,
             doctors: [],
+            isLoggedIn: true
         }
     },
     mounted() {
@@ -38,27 +38,27 @@ export default {
         },
     },
     components:{
-    Update,
     ChangePassword,
     SearchBar,
     DoctorCard,
     NavBar
-}
+    }
 }
 
 </script>
 <template>
-<NavBar></NavBar>
+<NavBar :isLoggedIn="isLoggedIn"></NavBar>
     <body>
         <div class="container">
-        <SearchBar class="p-5"></SearchBar>
+            <SearchBar class="p-5"></SearchBar>
             <div class="row row-cols-2">
                 <div v-for="doctor in doctors" v-bind:key="doctor.id">
-                    <DoctorCard class="col mb-3" :doctor="doctor"></DoctorCard>
+                    <DoctorCard class="col mb-3" :doctor="doctor" :isLoggedIn="isLoggedIn"></DoctorCard>
                 </div>
             </div>
         </div>
-    </body>   
+    </body>  
+
 </template>
 
 <style scoped>

@@ -5,6 +5,7 @@ import Doctor from '../view/Doctor.vue'
 import Patient from '../view/Patient.vue'
 import Signup from '../view/Signup.vue'
 import Login from '../view/Login.vue'
+import Profile from '../view/Profile.vue'
 
 
 const routes = [ 
@@ -32,6 +33,11 @@ const routes = [
         path: "/doctor",
         name: 'Doctor',
         component: Doctor
+    },
+    {
+        path: "/profile",
+        name: 'Profile',
+        component: Profile
     }
 ]
 

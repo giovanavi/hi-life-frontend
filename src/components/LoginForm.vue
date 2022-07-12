@@ -2,11 +2,12 @@
 import axios from 'axios';
 
 export default {
+    
     data(){
         return {
             form: {
-                email: 'vitor@gmail',
-                password: '123'
+                email: '',
+                password: ''
             }
         }
     },
@@ -22,7 +23,7 @@ export default {
                 
                 localStorage.setItem('token', data.acessToken);
                 localStorage.setItem('id', JSON.stringify(data.idUser));
-                this.$router.push('/');
+                this.$router.push('/patient');
             } catch(error){
                 if (error.response.status === 401){
                     alert('Usuário ou senha incorretos');
@@ -40,37 +41,35 @@ export default {
 </script>
 
 <template>
-<form class="row g-3 needs-validation" novalidate>
-    <div class="bg-secondary g-5 px-4 py-5 rounded">
-       <h2 class="text-center g-5 mb-5">Login</h2>
-        <div class="mb-3 col-md-11">
-            <label for="" class="form-label">Enter email or username*</label>
-            <input type="email" class="form-control" v-model= "form.email" :id="email" placeholder="jonedoe001@email.com">
+<form class="row needs-validation" id="formLogin" novalidate>
+    <div class="mb-3 offset-sm-1 col-sm-10 col-md-10 col-lg-11 col-xl-10">
+        <input type="email" class="form-control form-control-lg" v-model= "form.email" :id="email" placeholder="E-mail">
+        <div class="invalid-feedback">
+            Informe um e-mail válido!
+        </div>
+    </div>
+    <div class="mb-3 offset-sm-1 col-sm-10 col-md-10 col-lg-11 col-xl-10">
+        <input type="password" class="form-control form-control-lg" :id="password" v-model= "form.password" placeholder="Senha">
             <div class="invalid-feedback">
-                Informe um e-mail válido!
+                Informe sua senha
             </div>
-        </div>
-        <div class="mb-3 col-md-11">
-            <label for="" class="form-label">Enter password*</label>
-            <input type="password" class="form-control" :id="password" v-model= "form.password" placeholder="Enter your number">
-                <div class="invalid-feedback">
-                    Informe sua senha
-                </div>
-        </div>
-        <div class="mb-3 col-md-11">
-            <p> <a href="#" style="margin-left: 5px;">Esqueceu a senha?</a> </p>
-            <button id="btn-signup" class="btn btn-primary col-md-12" type="submit" @click="Login($event)" :disabled="VerifyInput()" >Se inscrever</button>
-            <p class="card-text">Não tem uma conta?
-                <router-link to="/signup">
-                    <a href="#" class="card-link">Inscreva-se</a>
-                </router-link>
-            </p>
-        </div>
+    </div>
+    <div class="mb-3 offset-sm-1 col-sm-10 col-md-10 col-lg-11 col-xl-10">
+        <p> <a href="#" >Esqueceu a senha?</a> </p>
+        <button class="col-12 btn btn-primary btn-lg " type="submit" @click="Login($event)" :disabled="VerifyInput()">Entrar</button>
+        <p class="mb-3 pt-2 card-text">Não tem uma conta?
+            <router-link to="/signup">
+                <a href="#" class="card-link">Inscreva-se</a>
+            </router-link>
+        </p>
     </div>
 </form>
 
 </template>
 
 <style scoped>
-
+a{
+    text-decoration:none;
+    font-size:100%;
+}
 </style>
