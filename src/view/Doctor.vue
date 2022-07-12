@@ -19,13 +19,13 @@ export default {
 
 </script>
 <template>
-<NavBar></NavBar>
+<NavBar  {{false}} ></NavBar>
     <body>
         <div class="container">
             <div class="row ">
                 <div class="col mb-4">
                     <SearchBar></SearchBar>
-                    <DoctorCard></DoctorCard>
+                    <DoctorCard {{false}} ></DoctorCard>
                 </div>
             </div>
         </div>

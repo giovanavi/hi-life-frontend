@@ -44,9 +44,13 @@ export default {
         this.name = this.doctor.name;
         this.specialty = this.doctor.specialty;
         this.crm = this.doctor.crm;
-        let target = JSON.stringify(this.doctor.availableTimes);
-        this.availableTimes = JSON.parse(target);
-        console.log(this.availableTimes);
+        for(let i = 0; i < this.doctor.availableTimes.length; i++) {
+          this.availableTimes[i].id = this.doctor.availableTimes[i].id;
+          this.availableTimes[i].day = this.doctor.availableTimes[i].time.replace(/T.*/g, '');
+          this.availableTimes[i].time = this.doctor.availableTimes[i].time.replace(/.*T/, '');
+          console.log(this.availableTimes[i]);
+        }
+        
         this.appointments = this.doctor.appointments;
       },
     }
@@ -61,6 +65,10 @@ export default {
     <p class="card-text"> Hospital de atendimento : {{hospitalName}}</p>
     <p class="card-text">Especialidade : {{specialty}}</p>
     <p class="card-text">CRM : {{crm}}</p>
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Open this select menu</option>
+      
+    </select>
       <DatePicker></DatePicker>
       <button @click.prevent="toogleModal" class="bg-blue-500  p-2 text-sm rounded">
         Open Modal
